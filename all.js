@@ -46,6 +46,8 @@ createApp({
     mounted() {
         this.getHuahang_spaces();
         this.getJixiu_spaces();
+        setInterval(() => this.getHuahang_spaces(), 60000);
+        setInterval(() => this.getJixiu_spaces(), 60000);
         // 初始化 bootstrap modal
         // updateModal = new bootstrap.Modal('#updateModal');
     }

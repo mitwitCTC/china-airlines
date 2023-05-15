@@ -1,5 +1,5 @@
 import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-const API = "http://192.168.50.220:4330";
+const API = "http://192.168.50.221:8080";
 // let updateModal = null;
 
 createApp({
@@ -46,8 +46,8 @@ createApp({
     mounted() {
         this.getHuahang_spaces();
         this.getJixiu_spaces();
-        setInterval(() => this.getHuahang_spaces(), 60000);
-        setInterval(() => this.getJixiu_spaces(), 60000);
+        setInterval(() => this.getHuahang_spaces(), 15000);
+        setInterval(() => this.getJixiu_spaces(), 15000);
         // 初始化 bootstrap modal
         // updateModal = new bootstrap.Modal('#updateModal');
     }

@@ -32,13 +32,13 @@
                                 {{ item.name }}
                             </td>
                             <td v-if="item.remaining_space == null">
-                                未連線
+                                待建置
                             </td>
-                            <td v-if="item.remaining_space != null"  class="text-success">
-                                {{ item.remaining_space }}
-                            </td>
-                            <td v-if="item.remaining_space == 0" class="text-danger">
+                            <td v-if="item.remaining_space <= 0 && item.remaining_space != null" class="text-danger">
                                 滿位
+                            </td>
+                            <td v-if="item.remaining_space != null && item.remaining_space > 0"  class="text-success">
+                                {{ item.remaining_space }}
                             </td>
                         </tr>
                     </tbody>
@@ -52,7 +52,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
-    <script type="module" src="./all.js"></script>
+    <script type="module" src="./js/all.js"></script>
 </body>
 
 </html>

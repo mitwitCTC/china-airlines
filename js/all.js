@@ -1,5 +1,5 @@
 import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-const api = "http://192.168.50.220:9130";
+const API = "http://192.168.50.220:9130";
 
 createApp({
     data() {
@@ -10,7 +10,7 @@ createApp({
     },
     methods: {
         getHuahang_spaces(){
-            const huahang_spacesAPI = `${api}/parking_place/huahang`;
+            const huahang_spacesAPI = `${API}/parking_place/huahang`;
             axios
             .get(huahang_spacesAPI)
             .then((response => {
@@ -21,7 +21,7 @@ createApp({
             })
         },
         getJixiu_spaces(){
-            const jixiu_spacesAPI = `${api}/parking_place/jixiu`;
+            const jixiu_spacesAPI = `${API}/parking_place/jixiu`;
             axios
             .get(jixiu_spacesAPI)
             .then((response => {

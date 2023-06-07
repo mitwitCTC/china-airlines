@@ -1,5 +1,5 @@
 import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-const API = "http://192.168.50.220:9130";
+const API = "http://192.168.50.223:9130";
 
 createApp({
     data() {

@@ -1,5 +1,5 @@
 import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-const API = "http://192.168.50.223:9130";
+const API = "https://7b44-122-116-23-30.ngrok-free.app";
 
 createApp({
     data() {
@@ -9,6 +9,15 @@ createApp({
         }
     },
     methods: {
+        checkLogin(){
+            if (sessionStorage.getItem('userCAL')) {
+                this.getHuahang_spaces()
+                this.getJixiu_spaces();
+            } else {
+                alert("請登入");
+                window.location = 'login.html'
+            }
+        },
         getHuahang_spaces(){
             const huahang_spacesAPI = `${API}/parking_place/huahang`;
             axios
@@ -33,8 +42,9 @@ createApp({
         }
     },
     mounted() {
-        this.getHuahang_spaces();
-        this.getJixiu_spaces();
+        this.checkLogin()
+        // this.getHuahang_spaces();
+        // this.getJixiu_spaces();
         setInterval(() => this.getHuahang_spaces(), 15000);
         setInterval(() => this.getJixiu_spaces(), 15000);
     }

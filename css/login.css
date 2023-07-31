@@ -1,0 +1,23 @@
+body{
+    background: #F9F5F6
+    ;
+}
+
+.loginForm{
+    background: #9288F8;
+    padding: 20px;
+}
+
+.loginTitle{
+    background: #9288F8;
+    padding: 10px;
+}
+
+.btnMain{
+    background: #8062D6;
+}
+
+.btnMain:hover{
+    background: #322653;
+    opacity: 0.7;
+}

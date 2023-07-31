@@ -5,87 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中華航空園區剩餘車位</title>
+    <title>剩餘車位系統</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="./images/logo.png">
 </head>
 <body>
     <div id="app">
         <div class="container-fluid">
             <div>
-                <img src="./images/logo2.png" alt="logo" style="display: block;" class="mx-auto">
-                <h1 class="text-center" style="margin-top: -4rem;">中華航空剩餘車位系統</h1>
-                <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                            type="button" role="tab" aria-controls="home" aria-selected="true">華航園區</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                            type="button" role="tab" aria-controls="profile" aria-selected="false">機修停車場</button>
-                    </li>
-                </ul> -->
+                <h1 class="text-center mt-2">剩餘車位系統</h1>
             </div>
-            <div>
-                <a href="huahang_spaces.html"> <button class="btn btn-primary mx-2">華航園區</button></a>
-                <a href="jixiu_spaces.html"> <button class="btn btn-primary mx-2">機修停車場</button></a>
+            <div class="d-flex justify-content-center">
+                <a href="huahang_spaces.html"><button class="btn btn-primary mx-2">華航園區</button></a>
+                <a href="jixiu_spaces.html"><button class="btn btn-primary mx-2">機修停車場</button></a>
+                <a href="users.html"><button class="btn btn-primary mx-2">使用者管理</button></a>
             </div>
-            <!-- <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead style="font-size: 2rem;">
-                                <tr class="col text-center">
-                                    <th class="col text-center">場站名稱</th>
-                                    <th class="col text-center">車位剩餘</th>
-                                </tr>
-                            </thead>
-                            <tbody style="font-size: 1.5rem;">
-                                <tr v-for="item in huahang_spaces" :key="item.id" class="text-center">
-                                    <td>
-                                        {{ item.name }}
-                                    </td>
-                                    <td v-if="item.remaining_space == null">
-                                        未連線
-                                    </td>
-                                    <td v-if="item.remaining_space != null">
-                                        {{ item.remaining_space }}
-                                    </td>
-                                    <td v-if="item.remaining_space == 0" class="text-danger">
-                                        滿位
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead style="font-size: 2rem;">
-                                <tr class="col text-center">
-                                    <th class="col text-center">場站名稱</th>
-                                    <th class="col text-center">車位剩餘</th>
-                                </tr>
-                            </thead>
-                            <tbody style="font-size: 1.5rem;">
-                                <tr v-for="item in jixiu_spaces" :key="item.id" class="text-center">
-                                    <td>
-                                        {{ item.name }}
-                                    </td>
-                                    <td v-if="item.remaining_space != null" class="text-success">
-                                        {{ item.remaining_space }}
-                                    </td>
-                                    <td v-else class="text-danger">
-                                        滿位
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.min.js'

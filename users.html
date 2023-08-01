@@ -33,8 +33,8 @@
                     <tr v-for="user in users" :key="user.id">
                         <th scope="row">{{user.name}}</th>
                         <td>{{user.account}}</td>
-                        <td><img src="./images/edit.png" alt="編輯" style="width: 25px;" @click="openEditUserModal('edit', user)"></td>
-                        <td><img src="./images/delete.png" alt="刪除" style="width: 25px;" @click="openDeleteUserModal(user)"></td>
+                        <td><a href="#"><img src="./images/edit.png" alt="編輯" style="width: 25px;" @click="openEditUserModal('edit', user)"></a></td>
+                        <td><a href="#"><img src="./images/delete.png" alt="刪除" style="width: 25px;" @click="openDeleteUserModal(user)"></a></td>
                     </tr>
                 </tbody>
             </table>

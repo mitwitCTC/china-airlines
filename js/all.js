@@ -2,6 +2,7 @@ import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 const API = "https://1192-122-116-23-30.ngrok-free.app";
 
 let editUserModal = null;
+let deleteUserModal = null;
 
 createApp({
     data() {
@@ -88,6 +89,24 @@ createApp({
                 })
             }
         },
+        openDeleteUserModal(user){
+            this.tempUser = Object.assign({}, user)
+            if (sessionStorage.getItem('userCAL') == this.tempUser.account){
+                deleteUserModal.show();
+            } else {
+                alert("無權限！");
+            }
+        },
+        deleteUser(){
+            const deleteUserApi = `${API}/users/deleteUser/${this.tempUser.id}`;
+            axios
+            .patch(deleteUserApi)
+            .then((response) => {
+                alert(response.data.message + '，請重新登入！');
+                sessionStorage.removeItem('userCAL');
+                window.location = 'login.html';
+            })
+        },
         getHuahang_spaces() {
             const huahang_spacesAPI = `${API}/parking_place/huahang`;
             axios
@@ -118,5 +137,6 @@ createApp({
         setInterval(() => this.getHuahang_spaces(), 15000);
         setInterval(() => this.getJixiu_spaces(), 15000);
         editUserModal = new bootstrap.Modal('#editUserModal');
+        deleteUserModal = new bootstrap.Modal('#deleteUserModal');
     }
 }).mount('#app')

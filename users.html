@@ -31,7 +31,7 @@
                         <th scope="row">{{user.name}}</th>
                         <td>{{user.account}}</td>
                         <td><img src="./images/edit.png" alt="編輯" style="width: 25px;" @click="openEditUserModal('edit', user)"></td>
-                        <td><img src="./images/delete.png" alt="刪除" style="width: 25px;"></td>
+                        <td><img src="./images/delete.png" alt="刪除" style="width: 25px;" @click="openDeleteUserModal(user)"></td>
                     </tr>
                 </tbody>
             </table>
@@ -90,6 +90,28 @@
                                     <label for="password">請再次輸入新密碼</label>
                                 </div>
 
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                                    <button type="submit" class="btn btn-primary">確認</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 刪除 Modal -->
+            <div class="modal fade" id="deleteUserModal" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+                aria-labelledby="deleteUserLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteUserLabel">刪除使用者</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="deleteForm"  @submit.prevent="deleteUser">
+                                <p>使用者名稱：<span>{{tempUser.name}}</span></p>
+                                <p>帳號：<span>{{tempUser.account}}</span></p>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
                                     <button type="submit" class="btn btn-primary">確認</button>

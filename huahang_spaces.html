@@ -13,9 +13,11 @@
 
 <body>
     <div id="app">
-        <div class="container-fluid">
-            <div>
-                <h1 class="text-center mt-3">剩餘車位系統<button class="btn btn-outline-primary ms-2" @click="logout">登出</button></h1>
+        <div class="container">
+            <div class="d-flex justify-content-between my-3 align-items-center ">
+                <button class="btn" type ="button" onclick="history.back()"><img src="./images/arrow.png" alt="回上一頁" title="回上一頁" style="width: 25px;"></button>
+                <h1 class="text-center mx-3">剩餘車位系統</h1>
+                <button class="btn btn-outline-primary" @click="logout">登出</button>
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered">

@@ -127,6 +127,16 @@ createApp({
                 .catch((error) => {
                     alert(error);
                 })
+        },
+        logout(){
+            sessionStorage.removeItem('userCAL');
+            const logoutApi = `${API}/users/logOut`;
+            axios
+            .post(logoutApi)
+            .then((response) => {
+                alert(response.data.message);
+                window.location = 'login.html';
+            })
         }
     },
     mounted() {

@@ -34,14 +34,19 @@ createApp({
                 })
         },
         openEditUserModal(status, user) {
-            editUserModal.show();
             if (status === 'create') {
+                editUserModal.show();
                 this.isNewUser = true;
                 this.tempUser = {};
             } else if (status === 'edit') {
                 this.isNewUser = false;
                 this.tempUser = Object.assign({}, user);
                 this.tempUser.password = "";
+                if (sessionStorage.getItem('userCAL') == this.tempUser.account){
+                    editUserModal.show();
+                }else{
+                    alert("無權限！")
+                }
             }
         },
         updateUser() {
@@ -69,15 +74,9 @@ createApp({
                             axios
                             .put(updateUserApi, {target: {password: this.tempUser.password}})
                             .then((response) => {
-                                if (sessionStorage.getItem('userCAL') == this.tempUser.account){
-                                    sessionStorage.removeItem('userCAL');
-                                    alert("已修改密碼，請重新登入！");
-                                    window.location = 'login.html';
-                                }else{
-                                    alert(response.data.message);
-                                    this.getUsers();
-                                    editUserModal.hide();
-                                }
+                                sessionStorage.removeItem('userCAL');
+                                alert(response.data.message + "，請重新登入！");
+                                window.location = 'login.html';
                             })
                         } else {
                             alert("新密碼輸入不一致！");

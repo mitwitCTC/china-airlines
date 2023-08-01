@@ -1,6 +1,6 @@
 import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
-const API = 'https://7b44-122-116-23-30.ngrok-free.app'
+const API = 'https://1192-122-116-23-30.ngrok-free.app'
 
 let loginCheckData = {};
 

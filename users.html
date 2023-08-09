@@ -65,6 +65,16 @@
                                         v-model="tempUser.password" required>
                                     <label for="password">請輸入密碼</label>
                                 </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="floatingSelect" required
+                                        v-model="tempUser.access">
+                                        <option disabled>請選擇權限</option>
+                                        <option v-for="item in access" :value="item.access">
+                                            {{ item.access }}
+                                        </option>
+                                    </select>
+                                    <label for="floatingSelect">請選擇權限</label>
+                                </div>
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
@@ -75,7 +85,12 @@
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control"
                                         v-model="tempUser.name" required disabled>
-                                    <label for="name">請輸入使用者名稱</label>
+                                    <label for="name">使用者名稱</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control"
+                                        v-model="tempUser.account" required disabled>
+                                    <label for="name">帳號</label>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="password" class="form-control"

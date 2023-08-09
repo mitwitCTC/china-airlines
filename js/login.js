@@ -1,6 +1,6 @@
 import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
-const API = 'https://1192-122-116-23-30.ngrok-free.app'
+const API = 'https://2cb7-122-116-23-30.ngrok-free.app'
 
 let loginCheckData = {};
 
@@ -26,8 +26,10 @@ createApp({
                         loginCheckData.account = response.data.data.account;
                         // loginCheckData.userToken = response.data.data.token;
                         loginCheckData.id = response.data.data.id;
+                        loginCheckData.access = response.data.data.access
                         // Init
-                        sessionStorage.setItem("userCAL", response.data.data.account);
+                        sessionStorage.setItem("userCAL", loginCheckData.account);
+                        sessionStorage.setItem("userAccess", loginCheckData.access);
                         alert(response.data.message);
                         window.location = `index.html`;
                     } else if (response.data.returnCode == 400) {
